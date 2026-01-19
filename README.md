@@ -186,4 +186,224 @@ Flowchart frontend menjelaskan **bagaimana pengguna berinteraksi dengan sistem**
 
 ---
 
-> Dokumentasi ini dibuat untuk membantu developer memahami sistem dengan cepat dan akurat dan di buat oleh Yeka.
+# 🗂️ Entity Relationship Diagram (ERD)
+
+Jika flowchart adalah **cerita tentang bagaimana sistem bekerja**, maka ERD adalah **peta dunia tempat cerita itu terjadi**.  
+ERD menjelaskan **siapa saja yang ada di dalam sistem, apa peran mereka, dan bagaimana mereka saling terhubung** melalui data.
+
+---
+
+## 📖 ERD dalam Sudut Pandang Cerita
+
+Bayangkan sebuah aplikasi adalah **sebuah kota digital**.
+
+- **Penduduk kota** → adalah data
+- **Bangunan** → adalah tabel database
+- **Alamat rumah** → adalah primary key
+- **Hubungan keluarga & pekerjaan** → adalah relasi antar tabel
+
+Tanpa ERD, kota ini akan kacau:
+- Data duplikat
+- Hubungan tidak jelas
+- Sulit dikembangkan
+- Rentan error
+
+ERD hadir sebagai **arsitek kota**, memastikan semua tertata rapi sejak awal.
+
+---
+
+## 📌 Apa Itu ERD?
+
+Entity Relationship Diagram (ERD) adalah **diagram visual yang menggambarkan struktur database** beserta hubungan antar tabel di dalam sebuah sistem.
+
+ERD digunakan untuk:
+- Merancang database sebelum implementasi
+- Memahami relasi data dengan cepat
+- Menjaga konsistensi dan integritas data
+- Menjadi dokumentasi backend jangka panjang
+
+---
+
+## 🧱 Komponen Utama ERD (Dengan Analogi)
+
+### 🏢 1️⃣ Entity (Tabel)
+
+**Entity** adalah representasi objek utama dalam sistem.  
+Dalam analogi kota, entity adalah **bangunan penting**.
+
+Contoh entity:
+- `users`
+- `products`
+- `transactions`
+- `orders`
+
+Setiap entity biasanya menjadi **satu tabel database**.
+
+---
+
+### 🧾 2️⃣ Attribute (Kolom)
+
+**Attribute** adalah detail dari sebuah entity.  
+Jika entity adalah bangunan, maka attribute adalah **isi di dalamnya**.
+
+Contoh attribute pada entity `users`:
+- `id`
+- `name`
+- `email`
+- `password`
+- `created_at`
+
+Attribute menjelaskan **karakteristik data** yang disimpan.
+
+---
+
+### 🔑 3️⃣ Primary Key (PK)
+
+Primary Key adalah **identitas unik** sebuah data.  
+Dalam dunia nyata, ini seperti **Nomor KTP**.
+
+Contoh:
+- `users.id`
+- `products.id`
+
+Primary Key memastikan:
+- Tidak ada data yang sama
+- Data mudah dicari
+- Relasi bisa dibangun dengan aman
+
+---
+
+### 🔗 4️⃣ Foreign Key (FK)
+
+Foreign Key adalah **jembatan penghubung antar tabel**.  
+Jika Primary Key adalah KTP, maka Foreign Key adalah **referensi KTP di dokumen lain**.
+
+Contoh:
+- `transactions.user_id` → mengacu ke `users.id`
+
+Dengan Foreign Key:
+- Data saling terhubung
+- Relasi menjadi jelas
+- Integritas data terjaga
+
+---
+
+## 🔄 Jenis Relasi dalam ERD (Dengan Cerita)
+
+### 1️⃣ One to One (1:1)
+Satu data berhubungan dengan satu data lain.
+
+**Analogi**:  
+Satu orang → satu KTP
+
+Contoh:
+- `users` ↔ `profiles`
+
+---
+
+### 2️⃣ One to Many (1:N)
+Satu data bisa memiliki banyak data lain.
+
+**Analogi**:  
+Satu orang → banyak transaksi
+
+Contoh:
+- `users` → `transactions`
+
+Artinya:
+> Satu user bisa melakukan banyak transaksi,  
+> tetapi satu transaksi hanya milik satu user.
+
+---
+
+### 3️⃣ Many to Many (M:N)
+Banyak data saling terhubung dengan banyak data lain.
+
+**Analogi**:  
+Satu murid → banyak mata pelajaran  
+Satu mata pelajaran → banyak murid
+
+Biasanya membutuhkan **tabel penghubung (pivot table)**.
+
+Contoh:
+- `users`
+- `roles`
+- `user_roles`
+
+---
+
+## 🧠 Contoh Cerita ERD dalam Sistem Login & Transaksi
+
+Mari kita lihat sistem sederhana:
+
+- User mendaftar → data masuk ke tabel `users`
+- User login → sistem mencocokkan `email` dan `password`
+- User melakukan transaksi → data masuk ke tabel `transactions`
+- Setiap transaksi menyimpan `user_id` sebagai Foreign Key
+
+Di sini ERD memastikan:
+- Transaksi tidak mungkin ada tanpa user
+- Data user tidak perlu disalin berulang
+- Hubungan data tetap konsisten
+
+---
+
+## 🧩 Peran ERD dalam Backend Development
+
+ERD adalah **fondasi backend**.
+
+Tanpa ERD:
+- Query jadi rumit
+- Data tidak konsisten
+- Sistem sulit dikembangkan
+
+Dengan ERD:
+- Struktur database jelas
+- Query lebih efisien
+- Mudah scaling
+- Mudah maintenance
+
+---
+
+## 🔗 Hubungan ERD dengan Flowchart
+
+Flowchart dan ERD **tidak bisa dipisahkan**.
+
+| Flowchart | ERD |
+|---------|-----|
+| Menjelaskan alur proses | Menjelaskan struktur data |
+| Fokus ke logika | Fokus ke relasi |
+| Bagaimana sistem berjalan | Di mana data disimpan |
+| Urutan kejadian | Hubungan antar data |
+
+Flowchart adalah **alur cerita**,  
+ERD adalah **dunia tempat cerita itu berlangsung**.
+
+---
+
+## 🧠 Best Practice Membuat ERD
+
+- Buat ERD sebelum coding backend
+- Gunakan penamaan tabel yang konsisten
+- Hindari data duplikat
+- Gunakan relasi yang jelas
+- Update ERD setiap perubahan struktur database
+
+---
+
+## 📎 Kesimpulan ERD
+
+ERD membantu developer memahami **siapa berhubungan dengan siapa di dalam sistem**.  
+Dengan ERD yang baik, sistem akan:
+- Lebih stabil
+- Lebih aman
+- Mudah dikembangkan
+- Mudah dipahami oleh developer baru
+
+---
+
+> Dokumentasi ERD ini dibuat sebagai panduan konseptual dan teknis  
+> agar pengembangan sistem berjalan terstruktur dan berkelanjutan.  
+>  
+> **Dibuat oleh Yeka**
+
