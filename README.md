@@ -1,10 +1,10 @@
-# 🔄 Flowchart Frontend & Backend Documentation
+# Flowchart Frontend & Backend Documentation
 
 Dokumentasi ini menjelaskan secara menyeluruh **dasar flowchart**, perbedaannya pada **frontend dan backend**, serta bagaimana flowchart digunakan untuk merancang sistem aplikasi yang terstruktur, aman, dan mudah dikembangkan.
 
 ---
 
-## 📌 Apa Itu Flowchart?
+##  Apa Itu Flowchart?
 
 Flowchart adalah **diagram alur logika** yang menggambarkan urutan proses, keputusan, dan interaksi dalam sebuah sistem dari awal hingga akhir secara visual.
 
@@ -16,7 +16,7 @@ Flowchart digunakan untuk:
 
 ---
 
-## 🎯 Tujuan Penggunaan Flowchart
+##  Tujuan Penggunaan Flowchart
 
 - Menjelaskan alur proses aplikasi secara jelas
 - Membantu sinkronisasi antara frontend dan backend
@@ -25,7 +25,7 @@ Flowchart digunakan untuk:
 
 ---
 
-## 🧱 Simbol Dasar Flowchart
+##  Simbol Dasar Flowchart
 
 | Simbol | Nama | Fungsi |
 |------|------|------|
