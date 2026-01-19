@@ -186,4 +186,4 @@ Flowchart frontend menjelaskan **bagaimana pengguna berinteraksi dengan sistem**
 
 ---
 
-> Dokumentasi ini dibuat untuk membantu developer memahami sistem dengan cepat dan akurat.
+> Dokumentasi ini dibuat untuk membantu developer memahami sistem dengan cepat dan akurat dan di buat oleh Yeka.
